@@ -58,4 +58,10 @@ public class InputFormattedNoWhitespaceBeforeEllipsis {
   void test13(@NonNull String[] @B ... arg) {}
 
   void test14(String[] @B ... arg) {}
+
+  void test15(String @NonNull @B ... arg) {}
+
+  void test16(String @NonNull @B ... arg) {}
+
+  void test17(String @NonNull @Size(max = 10) ... arg) {}
 }

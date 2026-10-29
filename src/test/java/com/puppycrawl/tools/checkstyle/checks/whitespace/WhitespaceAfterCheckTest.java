@@ -431,6 +431,22 @@ public class WhitespaceAfterCheckTest extends AbstractModuleTestSupport {
     }
 
     @Test
+    public void testWhitespaceAfterMultipleAnnotations() throws Exception {
+        final String[] expected = {
+            "27:41: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "Second"),
+            "30:56: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ")"),
+            "33:75: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "Second"),
+            "40:20: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "Second"),
+            "43:13: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "First"),
+            "46:13: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "First"),
+            "46:19: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "Second"),
+            "51:27: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, "Second"),
+        };
+        verifyWithInlineConfigParser(
+            getPath("InputWhitespaceAfterAnnotation3.java"), expected);
+    }
+
+    @Test
     public void testWhitespaceAfterAnnotationInPackageFile() throws Exception {
         final String[] expected = {
             "9:21: " + getCheckMessage(MSG_WS_NOT_FOLLOWED, ")"),

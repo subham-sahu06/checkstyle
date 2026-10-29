@@ -131,8 +131,9 @@ public class WhitespaceAfterCheck extends AbstractCheck {
             }
         }
         else if (type == TokenTypes.ANNOTATIONS) {
-            if (ast.getFirstChild() != null) {
-                DetailAST targetAST = ast.getFirstChild().getLastChild();
+            for (DetailAST annotation = ast.getFirstChild(); annotation != null;
+                    annotation = annotation.getNextSibling()) {
+                DetailAST targetAST = annotation.getLastChild();
                 if (targetAST.getType() == TokenTypes.DOT) {
                     targetAST = targetAST.getLastChild();
                 }
