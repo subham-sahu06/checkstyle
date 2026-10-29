@@ -29,6 +29,12 @@ public class InputNoWhitespaceBeforeAnnotations {
   // ''NonNull2' is not followed by whitespace'
   // ''[' is not preceded with whitespace'
 
+  @NonNull int @AnnoType @NonNull2 [] field4;
+  @NonNull int @AnnoType @NonNull2[] field5;
+  // 2 violations above:
+  // ''NonNull2' is not followed by whitespace'
+  // ''[' is not preceded with whitespace'
+
   // @NonNull int @NonNull ... field3; // non-compilable
   // @NonNull int @NonNull... field4; // non-compilable
 

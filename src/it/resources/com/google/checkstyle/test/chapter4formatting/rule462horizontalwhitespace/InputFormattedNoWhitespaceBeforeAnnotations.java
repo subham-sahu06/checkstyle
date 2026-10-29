@@ -18,6 +18,10 @@ public class InputFormattedNoWhitespaceBeforeAnnotations {
   @NonNull int @AnnoType [] @NonNull2 [] fiel1;
   @NonNull int @AnnoType [] @NonNull2 [] field2;
 
+  @NonNull int @AnnoType @NonNull2 [] field4;
+
+  @NonNull int @AnnoType @NonNull2 [] field5;
+
   /** Some javadoc. */
   public void foo(final char @NonNull [] param) {}
 

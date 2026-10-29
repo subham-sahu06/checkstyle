@@ -83,4 +83,12 @@ public class InputNoWhitespaceBeforeEllipsis {
   // 'Use a single space to separate non-whitespace characters'
   // ''[' is preceded with whitespace'
   // 'Use a single space to separate non-whitespace characters'
+
+  void test15(String @NonNull @B ... arg) {}
+
+  void test16(String @NonNull @B... arg) {}
+  // violation above ''B' is not followed by whitespace'
+
+  void test17(String @NonNull @Size(max = 10)... arg) {}
+  // violation above '')' is not followed by whitespace'
 }
